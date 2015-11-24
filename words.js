@@ -1,5 +1,4 @@
 Tasks = new Mongo.Collection(new Date().toISOString().slice(0,10).replace(/-/g,""));
-Users = new Mongo.Collection("users");
 if (Meteor.isClient) {
   // This code only runs on the client
   Template.body.helpers({
@@ -24,9 +23,6 @@ if (Meteor.isClient) {
       Meteor.call('removeAllPosts');
     }
   });
-//Template.footer.usercount = function () {
-//  return Meteor.users.find().count();
-//};
 
 }
 
