@@ -1,4 +1,4 @@
-Tasks = new Mongo.Collection("tasks");
+Tasks = new Mongo.Collection(new Date().toISOString().slice(0,10).replace(/-/g,""));
 Users = new Mongo.Collection("users");
 if (Meteor.isClient) {
   // This code only runs on the client
@@ -17,9 +17,10 @@ if (Meteor.isClient) {
       });
       event.target.text.value = "";
     }});
-  Template.click.events({ 
+
+
+  Template.click.events({
     "click .delete": function () {
-	event.preventDefault();
       Meteor.call('removeAllPosts');
     }
   });
