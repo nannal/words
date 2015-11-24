@@ -1,0 +1,33 @@
+<head>
+  <title>Words</title>
+</head>
+
+<body>
+  <div class="jumbotron">
+
+      <h1>Words</h1>
+</div>
+<div class="container-fluid">
+<p>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+</p>
+<div class="row">
+<form class="col-xs-6 .col-md-4 new-task">
+	<input type="text" name="text" autocomplete="off" placeholder="Add a word" class="form-control" maxlength="16"/>
+</form>
+{{> click}}
+</div>
+</div>
+<div class="users">
+</div>
+</body>
+
+<template name="click">
+<button class="delete btn btn-defaulti col-xs-6 .col-md-4">Clean up</button>
+</template>
+
+<template name="task">
+ {{text}} 
+</template>
